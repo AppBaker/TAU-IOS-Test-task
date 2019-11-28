@@ -8,12 +8,28 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
 
 class MapViewController: UIViewController {
     
+    
+    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var raitingLabel: UILabel!
+    @IBOutlet weak var carImage: UIImageView!
+    @IBOutlet weak var bykeImage: UIImageView!
+    @IBOutlet weak var locationNameLabel: UILabel!
+    @IBOutlet weak var locationAddress: UILabel!
+    @IBOutlet weak var connectorType1: UIImageView!
+    @IBOutlet weak var connectorType2: UIImageView!
+    @IBOutlet weak var connectorChademo: UIImageView!
+    @IBOutlet weak var connectorCCS: UIImageView!
+    @IBOutlet weak var connectorSchuko: UIImageView!
+    
+    
+    
+    
     @IBOutlet var mapView: GMSMapView!
-    
-    
+    var activityIndicator: UIActivityIndicatorView!
     var stationsManager = StationsManager()
     var stationsList: [StationDetailModel] = [] {
         didSet {
@@ -21,7 +37,7 @@ class MapViewController: UIViewController {
                 print(station.id)
                 let cameraPosition = GMSCameraPosition.camera(withLatitude: station.coordinates.lat,
                 longitude: station.coordinates.lng,
-                zoom: 9)
+                zoom: 12)
                 DispatchQueue.main.async {
                     self.mapView.animate(to: cameraPosition)
 //                    self.mapView.camera = cameraPosition
@@ -33,9 +49,23 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
+        mapView.mapType = .normal
         
         stationsManager.delegate = self
         stationsManager.fetchListOfStations()
+        
+        activityIndicator = UIActivityIndicatorView()
+        activityIndicator.center = view.center
+        activityIndicator.style = .large
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+        view.alpha = 0.4
+        
+        detailView.layer.cornerRadius = 20
+        detailView.clipsToBounds = true
+        detailView.isHidden = true
     
     }
     
@@ -54,10 +84,11 @@ class MapViewController: UIViewController {
         let marker = GMSMarker()
         
         marker.position = CLLocationCoordinate2D(latitude: station.coordinates.lat, longitude: station.coordinates.lng)
-        marker.title = station.name
+        marker.title = station.id
         marker.snippet = station.country
-        marker.map = map
+        marker.icon = UIImage(named: "point")
         
+        marker.map = map
         
     }
 }
@@ -69,8 +100,11 @@ extension MapViewController: StationsManagerDelegate {
         
         stationsList.append(station)
         DispatchQueue.main.async {
-//            self.loadMap(with: station)
-            self.addMarker(to: station, on: self.view as! GMSMapView)
+            self.addMarker(to: station, on: self.mapView)
+            self.activityIndicator.stopAnimating()
+            UIView.animate(withDuration: 0.7) {
+                self.view.alpha = 1
+            }
         }
     }
     
@@ -80,10 +114,14 @@ extension MapViewController: StationsManagerDelegate {
             stationsManager.fetchStationDetail(with: station.id)
         }
     }
-    
 }
 
 
 extension MapViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        detailView.isHidden = false
+        locationNameLabel.text = marker.title
+        return true
+    }
     
 }
