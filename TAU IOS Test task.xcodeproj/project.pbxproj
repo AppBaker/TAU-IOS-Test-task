@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		994397AE238F61C8008E2C26 /* StationDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994397AD238F61C8008E2C26 /* StationDetailModel.swift */; };
 		994397B0238F6CA8008E2C26 /* StationDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994397AF238F6CA8008E2C26 /* StationDetailData.swift */; };
+		99AEFFAD238F958B001B6BD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEFFAC238F958B001B6BD8 /* Constants.swift */; };
 		99FEFEB4238EE8BB0000477A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FEFEB3238EE8BB0000477A /* AppDelegate.swift */; };
 		99FEFEB6238EE8BB0000477A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FEFEB5238EE8BB0000477A /* SceneDelegate.swift */; };
 		99FEFEB8238EE8BB0000477A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FEFEB7238EE8BB0000477A /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		994397AD238F61C8008E2C26 /* StationDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailModel.swift; sourceTree = "<group>"; };
 		994397AF238F6CA8008E2C26 /* StationDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailData.swift; sourceTree = "<group>"; };
+		99AEFFAC238F958B001B6BD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		99FEFEB0238EE8BB0000477A /* TAU IOS Test task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TAU IOS Test task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FEFEB3238EE8BB0000477A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FEFEB5238EE8BB0000477A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99AEFFAB238F80D5001B6BD8 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				99FEFEB3238EE8BB0000477A /* AppDelegate.swift */,
+				99FEFEB5238EE8BB0000477A /* SceneDelegate.swift */,
+				99FEFEBC238EE8BF0000477A /* Assets.xcassets */,
+				99FEFEBE238EE8BF0000477A /* LaunchScreen.storyboard */,
+				99FEFEC1238EE8BF0000477A /* Info.plist */,
+				99AEFFAC238F958B001B6BD8 /* Constants.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 		99FEFEA7238EE8BA0000477A = {
 			isa = PBXGroup;
 			children = (
@@ -72,11 +87,7 @@
 				99FEFECB238EEC830000477A /* Model */,
 				99FEFECC238EEC920000477A /* View */,
 				99FEFECD238EEC9A0000477A /* Conrtoller */,
-				99FEFEB3238EE8BB0000477A /* AppDelegate.swift */,
-				99FEFEB5238EE8BB0000477A /* SceneDelegate.swift */,
-				99FEFEBC238EE8BF0000477A /* Assets.xcassets */,
-				99FEFEBE238EE8BF0000477A /* LaunchScreen.storyboard */,
-				99FEFEC1238EE8BF0000477A /* Info.plist */,
+				99AEFFAB238F80D5001B6BD8 /* Supporting files */,
 			);
 			path = "TAU IOS Test task";
 			sourceTree = "<group>";
@@ -195,6 +206,7 @@
 				99FEFEB4238EE8BB0000477A /* AppDelegate.swift in Sources */,
 				994397AE238F61C8008E2C26 /* StationDetailModel.swift in Sources */,
 				99FEFEB6238EE8BB0000477A /* SceneDelegate.swift in Sources */,
+				99AEFFAD238F958B001B6BD8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
