@@ -17,4 +17,5 @@ struct StationDetailModel {
     let street: String
     let rating: Double
     let connectors: [Connectors]
+    let coordinates: Coordinates
 }

@@ -16,6 +16,7 @@ struct StationDetailData: Decodable {
     let street: String
     let rating: Double
     let connectors: [Connectors]
+    let coordinates: Coordinates
 }
 
 struct Connectors: Decodable {

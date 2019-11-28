@@ -24,8 +24,8 @@ struct StationsManager {
         if let url = URL(string: locationsURL) {
             let session = URLSession(configuration: URLSessionConfiguration.default)
             let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    print ("Fetch list of stations error: \(error?.localizedDescription)")
+                if let error = error {
+                    print ("Fetch list of stations error: \(error.localizedDescription)")
                     return
                 }
                 if let safeData = data {
@@ -44,8 +44,8 @@ struct StationsManager {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: URLSessionConfiguration.default)
             let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    print ("Fetch station detail error: \(error?.localizedDescription)")
+                if let error = error {
+                    print ("Fetch station detail error: \(error.localizedDescription)")
                     return
                 }
                 if let safeData = data {
@@ -84,8 +84,8 @@ struct StationsManager {
                 city: decodeData.city,
                 street: decodeData.street,
                 rating: decodeData.rating,
-                connectors: decodeData.connectors
-
+                connectors: decodeData.connectors,
+                coordinates: decodeData.coordinates
             )
             
             return station
