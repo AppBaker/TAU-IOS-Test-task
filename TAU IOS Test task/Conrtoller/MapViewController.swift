@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
     
     @IBOutlet var mapView: GMSMapView!
     
@@ -33,16 +33,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         stationsManager.delegate = self
         stationsManager.fetchListOfStations()
+    
     }
     
-//    func loadMap(with station: StationDetailModel) {
-//        let camera = GMSCameraPosition.camera(withLatitude: station.coordinates.lat, longitude: station.coordinates.lng, zoom: 6.0)
-//        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-//
-//        view = mapView
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tabBarItem.title = "Map"
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarItem.title = ""
+    }
     
     
     func addMarker(to station: StationDetailModel, on map: GMSMapView) {
@@ -59,7 +63,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: StationsManagerDelegate {
+extension MapViewController: StationsManagerDelegate {
     
     func didRecieveStationDetail(_ station: StationDetailModel) {
         
@@ -79,3 +83,7 @@ extension ViewController: StationsManagerDelegate {
     
 }
 
+
+extension MapViewController: GMSMapViewDelegate {
+    
+}

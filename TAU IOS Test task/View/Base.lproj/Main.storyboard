@@ -7,44 +7,165 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TAU_IOS_Test_task" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="TAU_IOS_Test_task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GMSMapView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="h0u-UB-5w0"/>
+                    <tabBarItem key="tabBarItem" title="" image="map" catalog="system" id="h0u-UB-5w0"/>
                     <connections>
                         <outlet property="mapView" destination="8bC-Xf-vdC" id="THj-cJ-ZI9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="84.375"/>
+            <point key="canvasLocation" x="-301" y="988"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="JaB-LU-PDn">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0Zm-Yw-fo5" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0Zm-Yw-fo5" customClass="MyTabBarController" customModule="TAU_IOS_Test_task" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u1a-oY-Rab">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9pu-Yz-9u8"/>
+                        <segue destination="904-3J-PjR" kind="relationship" relationship="viewControllers" id="V0A-fk-Lib"/>
+                        <segue destination="4aB-7K-iRn" kind="relationship" relationship="viewControllers" id="OQK-K9-RIR"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="jLO-yP-bcR"/>
+                        <segue destination="iX1-7e-aUC" kind="relationship" relationship="viewControllers" id="DWI-D4-9dn"/>
+                        <segue destination="KSu-Sb-wDU" kind="relationship" relationship="viewControllers" id="5Wh-1c-lLM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbM-RM-6y1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="84.375"/>
+            <point key="canvasLocation" x="-152" y="84"/>
+        </scene>
+        <!--User View Controller-->
+        <scene sceneID="fHB-ZX-ctG">
+            <objects>
+                <viewController id="904-3J-PjR" customClass="UserViewController" customModule="TAU_IOS_Test_task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cCj-lx-a30">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPy-MG-xLh">
+                                <rect key="frame" x="166.5" y="430" width="81.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CPy-MG-xLh" firstAttribute="centerY" secondItem="cCj-lx-a30" secondAttribute="centerY" id="1iH-tE-oqz"/>
+                            <constraint firstItem="CPy-MG-xLh" firstAttribute="centerX" secondItem="cCj-lx-a30" secondAttribute="centerX" id="9JB-ts-1HM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S8T-gz-yp4"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="2tG-1Q-Pia"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IbD-cj-PTv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2068" y="988"/>
+        </scene>
+        <!--Time View Controller-->
+        <scene sceneID="qRO-uR-iua">
+            <objects>
+                <viewController id="4aB-7K-iRn" customClass="TimeViewController" customModule="TAU_IOS_Test_task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IWG-xY-6xX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUw-J1-Dhm">
+                                <rect key="frame" x="174.5" y="430" width="65" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nUw-J1-Dhm" firstAttribute="centerY" secondItem="IWG-xY-6xX" secondAttribute="centerY" id="I4Y-ve-9nF"/>
+                            <constraint firstItem="nUw-J1-Dhm" firstAttribute="centerX" secondItem="IWG-xY-6xX" secondAttribute="centerX" id="Ylm-BI-2sS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vBf-AW-bhe"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="clock" catalog="system" id="5ZT-i0-rzY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mB-X7-Sy5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1130" y="988"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="UAm-V5-hqC">
+            <objects>
+                <viewController id="iX1-7e-aUC" customClass="ListViewController" customModule="TAU_IOS_Test_task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1pC-Le-OfS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or0-Ab-duN">
+                                <rect key="frame" x="184" y="430" width="46.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Or0-Ab-duN" firstAttribute="centerY" secondItem="1pC-Le-OfS" secondAttribute="centerY" id="Wi0-4I-Zzt"/>
+                            <constraint firstItem="Or0-Ab-duN" firstAttribute="centerX" secondItem="1pC-Le-OfS" secondAttribute="centerX" id="ifD-ox-A12"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ibI-XR-tce"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="list.dash" catalog="system" id="7gr-PH-wg5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHL-0h-NZt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="584" y="988"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="oRu-dp-WHb">
+            <objects>
+                <viewController id="KSu-Sb-wDU" customClass="ChatViewController" customModule="TAU_IOS_Test_task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dhC-MZ-40w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvA-5F-fXe">
+                                <rect key="frame" x="176" y="430" width="62.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dvA-5F-fXe" firstAttribute="centerX" secondItem="dhC-MZ-40w" secondAttribute="centerX" id="ZWf-vs-FOj"/>
+                            <constraint firstItem="dvA-5F-fXe" firstAttribute="centerY" secondItem="dhC-MZ-40w" secondAttribute="centerY" id="gxV-Yt-cOl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C0J-O0-BJF"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="bubble.left.and.bubble.right" catalog="system" id="ULf-d7-BWB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BEf-8Z-wrS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="988"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bubble.left.and.bubble.right" catalog="system" width="64" height="48"/>
+        <image name="clock" catalog="system" width="64" height="60"/>
+        <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="map" catalog="system" width="64" height="56"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

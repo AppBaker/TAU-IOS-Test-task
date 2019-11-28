@@ -11,9 +11,14 @@
 		994397AE238F61C8008E2C26 /* StationDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994397AD238F61C8008E2C26 /* StationDetailModel.swift */; };
 		994397B0238F6CA8008E2C26 /* StationDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994397AF238F6CA8008E2C26 /* StationDetailData.swift */; };
 		99AEFFAD238F958B001B6BD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEFFAC238F958B001B6BD8 /* Constants.swift */; };
+		99AEFFB7238FE66A001B6BD8 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEFFB6238FE66A001B6BD8 /* UserViewController.swift */; };
+		99AEFFB9238FE68A001B6BD8 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEFFB8238FE68A001B6BD8 /* TimeViewController.swift */; };
+		99AEFFBB238FE6A5001B6BD8 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEFFBA238FE6A5001B6BD8 /* ListViewController.swift */; };
+		99AEFFBD238FE6B0001B6BD8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEFFBC238FE6B0001B6BD8 /* ChatViewController.swift */; };
+		99AEFFBF239027C2001B6BD8 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEFFBE239027C2001B6BD8 /* MyTabBarController.swift */; };
 		99FEFEB4238EE8BB0000477A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FEFEB3238EE8BB0000477A /* AppDelegate.swift */; };
 		99FEFEB6238EE8BB0000477A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FEFEB5238EE8BB0000477A /* SceneDelegate.swift */; };
-		99FEFEB8238EE8BB0000477A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FEFEB7238EE8BB0000477A /* ViewController.swift */; };
+		99FEFEB8238EE8BB0000477A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FEFEB7238EE8BB0000477A /* MapViewController.swift */; };
 		99FEFEBB238EE8BB0000477A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FEFEB9238EE8BB0000477A /* Main.storyboard */; };
 		99FEFEBD238EE8BF0000477A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FEFEBC238EE8BF0000477A /* Assets.xcassets */; };
 		99FEFEC0238EE8BF0000477A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FEFEBE238EE8BF0000477A /* LaunchScreen.storyboard */; };
@@ -27,10 +32,15 @@
 		994397AD238F61C8008E2C26 /* StationDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailModel.swift; sourceTree = "<group>"; };
 		994397AF238F6CA8008E2C26 /* StationDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailData.swift; sourceTree = "<group>"; };
 		99AEFFAC238F958B001B6BD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		99AEFFB6238FE66A001B6BD8 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		99AEFFB8238FE68A001B6BD8 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		99AEFFBA238FE6A5001B6BD8 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		99AEFFBC238FE6B0001B6BD8 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		99AEFFBE239027C2001B6BD8 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		99FEFEB0238EE8BB0000477A /* TAU IOS Test task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TAU IOS Test task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FEFEB3238EE8BB0000477A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FEFEB5238EE8BB0000477A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		99FEFEB7238EE8BB0000477A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		99FEFEB7238EE8BB0000477A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		99FEFEBA238EE8BB0000477A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99FEFEBC238EE8BF0000477A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99FEFEBF238EE8BF0000477A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -146,7 +156,12 @@
 		99FEFECD238EEC9A0000477A /* Conrtoller */ = {
 			isa = PBXGroup;
 			children = (
-				99FEFEB7238EE8BB0000477A /* ViewController.swift */,
+				99AEFFB6238FE66A001B6BD8 /* UserViewController.swift */,
+				99AEFFB8238FE68A001B6BD8 /* TimeViewController.swift */,
+				99FEFEB7238EE8BB0000477A /* MapViewController.swift */,
+				99AEFFBA238FE6A5001B6BD8 /* ListViewController.swift */,
+				99AEFFBC238FE6B0001B6BD8 /* ChatViewController.swift */,
+				99AEFFBE239027C2001B6BD8 /* MyTabBarController.swift */,
 			);
 			path = Conrtoller;
 			sourceTree = "<group>";
@@ -269,9 +284,14 @@
 			files = (
 				99FEFECF238EED630000477A /* StationsData.swift in Sources */,
 				99FEFED1238EF43B0000477A /* StationsManager.swift in Sources */,
+				99AEFFBB238FE6A5001B6BD8 /* ListViewController.swift in Sources */,
+				99AEFFB7238FE66A001B6BD8 /* UserViewController.swift in Sources */,
 				994397B0238F6CA8008E2C26 /* StationDetailData.swift in Sources */,
-				99FEFEB8238EE8BB0000477A /* ViewController.swift in Sources */,
+				99AEFFBF239027C2001B6BD8 /* MyTabBarController.swift in Sources */,
+				99AEFFB9238FE68A001B6BD8 /* TimeViewController.swift in Sources */,
+				99FEFEB8238EE8BB0000477A /* MapViewController.swift in Sources */,
 				99FEFEB4238EE8BB0000477A /* AppDelegate.swift in Sources */,
+				99AEFFBD238FE6B0001B6BD8 /* ChatViewController.swift in Sources */,
 				994397AE238F61C8008E2C26 /* StationDetailModel.swift in Sources */,
 				99FEFEB6238EE8BB0000477A /* SceneDelegate.swift in Sources */,
 				99AEFFAD238F958B001B6BD8 /* Constants.swift in Sources */,
