@@ -32,7 +32,7 @@ class MapViewController: UIViewController {
     var stationsList: [StationDetailModel] = [] {
         didSet {
             if let station = stationsList.last{
-                print(station.id)
+
                 let cameraPosition = GMSCameraPosition.camera(withLatitude: station.coordinates.lat,
                                                               longitude: station.coordinates.lng,
                                                               zoom: 12)
@@ -46,6 +46,8 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         mapView.delegate = self
         mapView.mapType = .normal
@@ -64,6 +66,7 @@ class MapViewController: UIViewController {
         detailView.layer.cornerRadius = 20
         detailView.clipsToBounds = true
         detailView.isHidden = true
+        detailView.alpha = 0
         
     }
     
@@ -137,10 +140,11 @@ extension MapViewController: GMSMapViewDelegate {
             }
         }
         
+        detailView.isHidden = false
+        
         mapView.animate(to: GMSCameraPosition.camera(withTarget: marker.position, zoom: 12))
         
-        detailView.isHidden = false
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.4) {
             self.detailView.alpha = 1
         }
         
@@ -150,7 +154,7 @@ extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             self.detailView.alpha = 0
         }) { (bool) in
             self.detailView.isHidden = true
