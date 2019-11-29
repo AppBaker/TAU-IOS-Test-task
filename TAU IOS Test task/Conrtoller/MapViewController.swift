@@ -146,7 +146,7 @@ extension MapViewController: GMSMapViewDelegate {
         
         mapView.animate(to: GMSCameraPosition.camera(withTarget: marker.position, zoom: 12))
         
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.2) {
             self.detailView.alpha = 1
         }
         
@@ -156,7 +156,7 @@ extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         
-        UIView.animate(withDuration: 0.4, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.detailView.alpha = 0
         }) { (bool) in
             self.detailView.isHidden = true
