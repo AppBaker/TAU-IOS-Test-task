@@ -1,9 +1,9 @@
 #  TAU IOS Test task
 
 ## Steps:
-### 1. Get data from server. Parse JSON
+### 1. Get data from server. JSON
 ### 2. Add Google map
-### 3. Storyboard desine
+### 3. Storyboard design
 
 ![Task](Documentation/task.png)
 
