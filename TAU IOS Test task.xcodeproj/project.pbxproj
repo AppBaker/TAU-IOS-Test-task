@@ -10,6 +10,7 @@
 		918711EBC9E370BC088D8513 /* Pods_TAU_IOS_Test_task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884010DBD3633F33F5981E1 /* Pods_TAU_IOS_Test_task.framework */; };
 		994397AE238F61C8008E2C26 /* StationDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994397AD238F61C8008E2C26 /* StationDetailModel.swift */; };
 		994397B0238F6CA8008E2C26 /* StationDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994397AF238F6CA8008E2C26 /* StationDetailData.swift */; };
+		99590FEA2390BF930028BD31 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99590FE92390BF920028BD31 /* UIImage+Extension.swift */; };
 		99AEFFAD238F958B001B6BD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEFFAC238F958B001B6BD8 /* Constants.swift */; };
 		99AEFFB7238FE66A001B6BD8 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEFFB6238FE66A001B6BD8 /* UserViewController.swift */; };
 		99AEFFB9238FE68A001B6BD8 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEFFB8238FE68A001B6BD8 /* TimeViewController.swift */; };
@@ -31,6 +32,7 @@
 		5884010DBD3633F33F5981E1 /* Pods_TAU_IOS_Test_task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TAU_IOS_Test_task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994397AD238F61C8008E2C26 /* StationDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailModel.swift; sourceTree = "<group>"; };
 		994397AF238F6CA8008E2C26 /* StationDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailData.swift; sourceTree = "<group>"; };
+		99590FE92390BF920028BD31 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		99AEFFAC238F958B001B6BD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		99AEFFB6238FE66A001B6BD8 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		99AEFFB8238FE68A001B6BD8 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		99590FE82390BF700028BD31 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				99590FE92390BF920028BD31 /* UIImage+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		99AEFFAB238F80D5001B6BD8 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 		99FEFEB2238EE8BB0000477A /* TAU IOS Test task */ = {
 			isa = PBXGroup;
 			children = (
+				99590FE82390BF700028BD31 /* Extensions */,
 				99FEFECB238EEC830000477A /* Model */,
 				99FEFECC238EEC920000477A /* View */,
 				99FEFECD238EEC9A0000477A /* Conrtoller */,
@@ -283,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99FEFECF238EED630000477A /* StationsData.swift in Sources */,
+				99590FEA2390BF930028BD31 /* UIImage+Extension.swift in Sources */,
 				99FEFED1238EF43B0000477A /* StationsManager.swift in Sources */,
 				99AEFFBB238FE6A5001B6BD8 /* ListViewController.swift in Sources */,
 				99AEFFB7238FE66A001B6BD8 /* UserViewController.swift in Sources */,

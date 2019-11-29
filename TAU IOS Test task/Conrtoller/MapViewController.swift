@@ -101,7 +101,9 @@ class MapViewController: UIViewController {
         locationAddress.text = "\(detail.street), \(detail.city), \(detail.country)"
         for connector in detail.connectors {
             if let connectorImage = UIImage(named: connector.type) {
-                connectorsStackView.addArrangedSubview(UIImageView(image: connectorImage))
+                let imageView = UIImageView(image: connectorImage)
+                imageView.setImageColor(color: #colorLiteral(red: 0.5487795472, green: 0.7857350111, blue: 0.2036821842, alpha: 1))
+                connectorsStackView.addArrangedSubview(imageView)
             }
         }
     }
