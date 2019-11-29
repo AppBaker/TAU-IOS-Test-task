@@ -19,11 +19,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var bykeImage: UIImageView!
     @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var locationAddress: UILabel!
-    @IBOutlet weak var connectorType1: UIImageView!
-    @IBOutlet weak var connectorType2: UIImageView!
-    @IBOutlet weak var connectorChademo: UIImageView!
-    @IBOutlet weak var connectorCCS: UIImageView!
-    @IBOutlet weak var connectorSchuko: UIImageView!
+    @IBOutlet weak var connectorsStackView: UIStackView!
+    
     
     
     
@@ -31,16 +28,16 @@ class MapViewController: UIViewController {
     @IBOutlet var mapView: GMSMapView!
     var activityIndicator: UIActivityIndicatorView!
     var stationsManager = StationsManager()
+    var markersDictionary: [String: StationDetailModel] = [:]
     var stationsList: [StationDetailModel] = [] {
         didSet {
             if let station = stationsList.last{
                 print(station.id)
                 let cameraPosition = GMSCameraPosition.camera(withLatitude: station.coordinates.lat,
-                longitude: station.coordinates.lng,
-                zoom: 12)
+                                                              longitude: station.coordinates.lng,
+                                                              zoom: 12)
                 DispatchQueue.main.async {
                     self.mapView.animate(to: cameraPosition)
-//                    self.mapView.camera = cameraPosition
                 }
             }
         }
@@ -49,6 +46,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         mapView.delegate = self
         mapView.mapType = .normal
         
@@ -66,7 +64,7 @@ class MapViewController: UIViewController {
         detailView.layer.cornerRadius = 20
         detailView.clipsToBounds = true
         detailView.isHidden = true
-    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,18 +80,31 @@ class MapViewController: UIViewController {
     func addMarker(to station: StationDetailModel, on map: GMSMapView) {
         
         let marker = GMSMarker()
-        
         marker.position = CLLocationCoordinate2D(latitude: station.coordinates.lat, longitude: station.coordinates.lng)
         marker.title = station.id
         marker.snippet = station.country
         marker.icon = UIImage(named: "point")
-        
         marker.map = map
         
+        markersDictionary[station.id] = station
+    }
+    
+    func  setDetailView(with detail: StationDetailModel) {
+        for image in connectorsStackView.subviews {
+            image.removeFromSuperview()
+        }
+        raitingLabel.text = "★ \(String(format: "%.01f", detail.rating))"
+        locationNameLabel.text = detail.name
+        locationAddress.text = "\(detail.street), \(detail.city), \(detail.country)"
+        for connector in detail.connectors {
+            if let connectorImage = UIImage(named: connector.type) {
+                connectorsStackView.addArrangedSubview(UIImageView(image: connectorImage))
+            }
+        }
     }
 }
 
-
+//MARK: - StationsManagerDelegate Recieve Stations Detail Methods
 extension MapViewController: StationsManagerDelegate {
     
     func didRecieveStationDetail(_ station: StationDetailModel) {
@@ -116,12 +127,35 @@ extension MapViewController: StationsManagerDelegate {
     }
 }
 
-
+//MARK: - GMSMapViewDelegate GoogleMap methods
 extension MapViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        if let markerKey = marker.title {
+            if let stationDetail = markersDictionary[markerKey] {
+                setDetailView(with: stationDetail)
+            }
+        }
+        
+        mapView.animate(to: GMSCameraPosition.camera(withTarget: marker.position, zoom: 12))
+        
         detailView.isHidden = false
-        locationNameLabel.text = marker.title
+        UIView.animate(withDuration: 0.2) {
+            self.detailView.alpha = 1
+        }
+        
         return true
+    }
+    
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.detailView.alpha = 0
+        }) { (bool) in
+            self.detailView.isHidden = true
+        }
+        
     }
     
 }

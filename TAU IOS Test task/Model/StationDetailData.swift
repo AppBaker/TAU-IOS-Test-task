@@ -13,7 +13,7 @@ struct StationDetailData: Decodable {
     let name: String
     let country: String
     let city: String
-    let street: String
+    let street: String    
     let rating: Double
     let connectors: [Connectors]
     let coordinates: Coordinates
