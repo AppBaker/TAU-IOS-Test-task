@@ -8,6 +8,6 @@
 
 struct K {
     struct GoogleMap {
-        static let apiKey = "AIzaSyDCkCA1rA9YykTZ_qbMRk1uTBW9LzMiLT4"
+        static let apiKey = ""
     }
 }
